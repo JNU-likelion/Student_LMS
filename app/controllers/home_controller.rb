@@ -9,12 +9,40 @@ class HomeController < ApplicationController
   def post
   end
   
+  def signup_new
+    
+    @login = Login.new
+    @login.u_id = params[:u_id]
+    @login.u_name = params[:u_name]
+    @login.u_pwd = params[:u_pwd]
+    @login.re_pwd = params[:re_pwd]
+    @login.u_tel = params[:u_tel]
+    @login.u_job = params[:u_job]
+    @login.u_grade = params[:u_grade]
+    @login.u_email = params[:u_email]
+    @login.save
+    
+
+  end
+  
   def signup
-    render layout: false
+    
+    
+    
+    
+    
+    # render layout: false
   end
 
   def login
-    render layout: false
+    @login = Login.all
+    @login.each do |p|    
+        if( params[:uname] == p.u_id && params[:psw] == p.u_pwd ) 
+              redirect_to "/home/main"
+              
+        end
+    end    
+    # render layout: false
   end
   
   def calendar
@@ -25,6 +53,18 @@ class HomeController < ApplicationController
   end
   
   def main
+    render layout: false
+  end
+  
+  def flot
+    render layout: false
+  end
+  
+  def morris
+    render layout: false
+  end
+  
+  def teacher
     render layout: false
   end
   
@@ -78,6 +118,15 @@ class HomeController < ApplicationController
   #   redirect_to "/home/index"
   # end
   
-  
+  def admin
+    
+    @score = Score.new
+    @score.t_name = params[:t_name]
+    @score.t_class = params[:t_class]
+    @score.s_name = params[:s_name]
+    @score.s_score = params[:s_score]
+    @score.save
+    
+  end
   
 end

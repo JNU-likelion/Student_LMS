@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get 'home/calendar'
   
+ get 'home/signup_new' 
+  
    #board Create
   get '/board/b_new' => 'board#b_new'
   post '/board/b_create' => 'board#b_create'
@@ -15,18 +17,29 @@ Rails.application.routes.draw do
   get '/board/b_index'
   get '/board/:id' => 'board#b_show'
    #board Delete
-  get '/board/b_delete/:post_id' => 'board#b_delete'
+  get '/board/delete/:id' => 'board#delete'
    #board Update
-  get '/board/b_update/:post_id' => 'board#b_update'
+  get '/board/b_update/:id' => 'board#b_update'
    #board Replie
   get '/board/:id/create_reply' => 'board#create_reply'
+  post '/board/b_modify/:id' => 'board#b_modify'
   
-  get 'home/signup'
+
   
-  #bootstrap-main
+  #bootstrap-main(학생용/부모님용)
   get 'home/main'
   get 'home/flot'
   get 'home/morris'
+  get 'home/tables'
+  get 'home/forms'
+  #bootstrap-main(선생님용)
+  get 'home/teacher'
+  
+  get 'home/signup'
+
+  get 'login_check' => 'home#login'
+  post '/home/signup_new' => 'signup_new'
+  
   
   devise_for :users
   root 'home#index'

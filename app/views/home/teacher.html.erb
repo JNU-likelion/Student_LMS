@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LMS - 학습 관리 시스템</title>
+    <title>LMS - 학습 관리 시스템(관리자용)</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.html">LMS </a>
+                <a class="navbar-brand" href="teacher.html">LMS - Admin </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -276,20 +276,22 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="main.html"><i class="fa fa-dashboard fa-fw"></i> 학습현황</a>
+                            <a href="teacher.html"><i class="fa fa-dashboard fa-fw"></i> 학습관리</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 성적확인<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 시험점수관리<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                
                                 <li>
-                                    <a href="morris.html">전국 & 개인별 성적 확인</a>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 출결현황</a>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 출결관리</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Q&A</a>
@@ -370,7 +372,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">학습현황</h1>
+                    <h1 class="page-header">학습관리</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -500,7 +502,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> 학생 시험 점수(개인)
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 과목별 시험 점수 입력
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -591,7 +593,7 @@
                                 </div>
                                 <!-- /.col-lg-4 (nested) -->
                                 <div class="col-lg-8">
-                                    <div id="morris-bar-chart" style="width:auto;"></div>
+                                    <div id="morris-bar-chart"></div>
                                 </div>
                                 <!-- /.col-lg-8 (nested) -->
                             </div>
@@ -742,8 +744,31 @@
                                     <span class="pull-right text-muted small"><em>43 minutes ago</em>
                                     </span>
                                 </a>
-                                
-                                
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
+                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
+                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
+                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
+                                    </span>
+                                </a>
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-money fa-fw"></i> Payment Received
+                                    <span class="pull-right text-muted small"><em>Yesterday</em>
+                                    </span>
+                                </a>
                             </div>
                             <!-- /.list-group -->
                             <a href="#" class="btn btn-default btn-block">View All Alerts</a>
@@ -751,15 +776,15 @@
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
-                    <div class="panel panel-default" style="opacity: 0;">
-                        <!--<div class="panel-heading">-->
-                        <!--    <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example-->
-                        <!--</div>-->
-                        <!--<div class="panel-body">-->
-                            <div id="morris-donut-chart" style="height:0px;"></div>
-                        <!--    <a href="#" class="btn btn-default btn-block">View Details</a>-->
-                        <!--</div>-->
-                         /.panel-body 
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Donut Chart Example
+                        </div>
+                        <div class="panel-body">
+                            <div id="morris-donut-chart"></div>
+                            <a href="#" class="btn btn-default btn-block">View Details</a>
+                        </div>
+                        <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                     <div class="chat-panel panel panel-default">
@@ -808,13 +833,13 @@
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
+                                            <strong class="primary-font">Jack Sparrow</strong>
                                             <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 12 분 전
+                                                <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
                                             </small>
                                         </div>
                                         <p>
-                                            그냥 나오세요.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
                                     </div>
                                 </li>
@@ -825,11 +850,11 @@
                                     <div class="chat-body clearfix">
                                         <div class="header">
                                             <small class=" text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 13 분 전</small>
-                                            <strong class="pull-right primary-font">이오주</strong>
+                                                <i class="fa fa-clock-o fa-fw"></i> 13 mins ago</small>
+                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
                                         </div>
                                         <p>
-                                            저 오늘 아파요
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
                                     </div>
                                 </li>
@@ -839,27 +864,12 @@
                                     </span>
                                     <div class="chat-body clearfix">
                                         <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
+                                            <strong class="primary-font">Jack Sparrow</strong>
                                             <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 24 시간 전</small>
+                                                <i class="fa fa-clock-o fa-fw"></i> 14 mins ago</small>
                                         </div>
                                         <p>
-                                            내일 보강 있습니다.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
-                                            <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 2 일 전</small>
-                                        </div>
-                                        <p>
-                                            질문은 안받습니다.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
                                     </div>
                                 </li>
@@ -870,81 +880,20 @@
                                     <div class="chat-body clearfix">
                                         <div class="header">
                                             <small class=" text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 3 일 전</small>
-                                            <strong class="pull-right primary-font">이오주</strong>
+                                                <i class="fa fa-clock-o fa-fw"></i> 15 mins ago</small>
+                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
                                         </div>
                                         <p>
-                                            질문있어요.
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales.
                                         </p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
-                                            <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 5 일 전</small>
-                                        </div>
-                                        <p>
-                                            내일 보강 있습니다.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
-                                            <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 6 일 전</small>
-                                        </div>
-                                        <p>
-                                            내일 보강 있습니다.
-                                        </p>
-                                    </div>
-                                </li>
-                                                                <li class="left clearfix">
-                                    <span class="chat-img pull-left">
-                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">허승범 강사</strong>
-                                            <small class="pull-right text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 7 일 전
-                                            </small>
-                                        </div>
-                                        <p>
-                                            그냥 나오세요.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <small class=" text-muted">
-                                                <i class="fa fa-clock-o fa-fw"></i> 7 일 전</small>
-                                            <strong class="pull-right primary-font">이오주</strong>
-                                        </div>
-                                        <p>
-                                            쌤 저 오늘 못가요.
-                                        </p>
-                                    </div>
-                                </li>
                         <!-- /.panel-body -->
                         <div class="panel-footer">
                             <div class="input-group">
-                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="메세지를 입력하세요" />
+                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                                 <span class="input-group-btn">
                                     <button class="btn btn-warning btn-sm" id="btn-chat">
                                         Send

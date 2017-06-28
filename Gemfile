@@ -6,7 +6,7 @@ gem 'omniauth'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'rails_db'
-gem 'carrierwave', '~> 1.0'
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
