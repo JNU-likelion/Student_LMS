@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  
+</head>
+
+<body>
+    <form action="/action_page.php" style="padding-top: 120px;">
+      <div class="imgcontainer">
+        <img src="https://media.rocketpunch.com/cache/8f/32/8f32f7db0e33a395c48850aa7cc7bb16.png" alt="logo" class="logo">
+      </div>
+
+      <div class="container">
+        <label><b>ID</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+        
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <a href="main.html"><button type="submit">Login</button></a>
+        <!--<--%if(:uname == params[:])%>-->
+        <br>
+        <input type="checkbox" checked="checked"> Remember me
+        <span class="signup"><a href="/home/signup">회원가입</a></span>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <label type="button" class="login_cancelbtn" style="opacity: 0;">이전으로</button>
+        <span class="psw"><a href="#">비밀번호찾기</a></span>
+        <span class="id"><a href="#">아이디 찾기 </a> |</span>
+      </div>
+    </form>
+</body>
+</html>

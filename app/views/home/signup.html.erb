@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>signup</title>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/stylesheets/main.css">
+</head>
+
+<body>
+  <form action="/action_page.php">
+
+  <div class="container">
+    <label><b>아이디</b></label>
+    <input type="text" placeholder="아이디를 입력하세요" name="ID" required>
+
+    <label><b>이름</b></label>
+    <input type="text" placeholder="이름을 입력하세요" name="name" required>
+
+    <label><b>비밀번호</b></label>
+    <input type="password" placeholder="비밀번호를 입력하세요" name="psw" required>
+
+    <label><b>비밀번호 확인</b></label>
+    <input type="password" placeholder="비밀번호를 다시 입력해주세요" name="psw-repeat" required>
+
+    <label><b>전화번호</b></label>
+    <input type="tel" placeholder="전화번호를 입력하세요" name="tel" required>
+
+    <!--<label for="example-tel-input" class="col-2 col-form-label"><b>전화번호</b></label>-->
+    <!--<input class="form-control" type="tel" placeholder="Phone number" id="example-tel-input">-->
+    
+    <label><b>직업</b></label><br>
+    <div class="contain" style="padding: 10px;">
+      <input type="radio" name="job" value="student" checked="checked">학생</input>
+      <input type="radio" name="job" value="teacher">교사</input>
+      <input type="radio" name="job" value="parents">학부모</input>
+      <br>
+    </div>
+    <label class="mr-sm-2" for="inlineFormCustomSelect"><b>학년</b></label>
+     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>학년선택</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+     </select>
+
+    <label><b>학부모 Email</b></label>
+    <input type="email" placeholder="email" name="eamil" required>
+
+
+    <!--<label for="example-email-input" class="col-2 col-form-label"><b>학부모 Email</b></label>-->
+    <!--<input class="form-control" type="email" placeholder="email" id="example-email-input">-->
+
+    <!--<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+
+
+    <div class="clearfix">
+      <a href="/"><button type="submit" class="signupbtn">가입하기</button></a>
+      <a href="/"><button type="button" class="signup_cancelbtn">취소</button></a>
+
+    </div>
+  </div>
+</form>
+</body>
+</html>
