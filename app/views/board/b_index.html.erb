@@ -1,11 +1,25 @@
-<h1>게시판</h1>
+<!DOCTYPE html>
+<html lang="ko">
+    
+<head>
+  <meta charset="UTF-8">
+  <title>board</title>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/stylesheets/board.scss">
+</head>
 
-<a href="/board/b_new">글쓰기</a>
+<body>
+    <h1>게시판</h1>
+
+    <a href="/board/b_new"><button type="submit" class="write">글쓰기</button></a>
 
     <% @board.each do |p| %>
     <div class="well">
-    <!--<img height = "50" width = "50" src = "<= p.photo.url %>" >-->
+    
     <a href="/board/<%= p.id %>">제목: <%= p.title %> </a><br>
     
     </div>
     <% end %>
+</body>
+</html>

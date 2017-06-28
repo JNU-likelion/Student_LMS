@@ -3,6 +3,15 @@ form {
     border: 3px solid #f1f1f1;
 }
 
+.user { 
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
 /* Full-width inputs */
 input[type=text], input[type=password], input[type=tel], input[type=email], select[id=inlineFormCustomSelect] {
     width: 100%;

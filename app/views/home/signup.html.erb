@@ -10,32 +10,33 @@
 </head>
 
 <body>
-  <form action="/action_page.php">
+  
+  <form action="/home/signup_new">
 
   <div class="container">
     <label><b>아이디</b></label>
-    <input type="text" placeholder="아이디를 입력하세요" name="ID" required>
-
+    <input type="text" placeholder="아이디를 입력하세요" name="u_id" required>
+    
     <label><b>이름</b></label>
-    <input type="text" placeholder="이름을 입력하세요" name="name" required>
+    <input type="text" placeholder="이름을 입력하세요" name="u_name" required>
 
     <label><b>비밀번호</b></label>
-    <input type="password" placeholder="비밀번호를 입력하세요" name="psw" required>
+    <input type="password" placeholder="비밀번호를 입력하세요" name="u_pwd" required>
 
     <label><b>비밀번호 확인</b></label>
-    <input type="password" placeholder="비밀번호를 다시 입력해주세요" name="psw-repeat" required>
+    <input type="password" placeholder="비밀번호를 다시 입력해주세요" name="re-pwd" required>
 
     <label><b>전화번호</b></label>
-    <input type="tel" placeholder="전화번호를 입력하세요" name="tel" required>
+    <input type="tel" placeholder="전화번호를 입력하세요" name="u_tel" required>
 
     <!--<label for="example-tel-input" class="col-2 col-form-label"><b>전화번호</b></label>-->
     <!--<input class="form-control" type="tel" placeholder="Phone number" id="example-tel-input">-->
     
     <label><b>직업</b></label><br>
     <div class="contain" style="padding: 10px;">
-      <input type="radio" name="job" value="student" checked="checked">학생</input>
-      <input type="radio" name="job" value="teacher">교사</input>
-      <input type="radio" name="job" value="parents">학부모</input>
+      <input type="radio" name="u_job" value="student" checked="checked">학생</input>
+      <input type="radio" name="u_job" value="teacher">교사</input>
+      <input type="radio" name="u_job" value="parents">학부모</input>
       <br>
     </div>
     <label class="mr-sm-2" for="inlineFormCustomSelect"><b>학년</b></label>
@@ -47,7 +48,7 @@
      </select>
 
     <label><b>학부모 Email</b></label>
-    <input type="email" placeholder="email" name="eamil" required>
+    <input type="email" placeholder="email" name="u_eamil" required>
 
 
     <!--<label for="example-email-input" class="col-2 col-form-label"><b>학부모 Email</b></label>-->
@@ -63,5 +64,7 @@
     </div>
   </div>
 </form>
+
+
 </body>
 </html>

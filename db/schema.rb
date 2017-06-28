@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628145743) do
+ActiveRecord::Schema.define(version: 20170628175148) do
 
   create_table "board_dbs", force: :cascade do |t|
     t.string   "title"
@@ -22,11 +22,33 @@ ActiveRecord::Schema.define(version: 20170628145743) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "logins", force: :cascade do |t|
+    t.string   "u_id"
+    t.string   "u_name"
+    t.string   "u_pwd"
+    t.string   "re_pwd"
+    t.string   "u_tel"
+    t.string   "u_job"
+    t.string   "u_grade"
+    t.string   "u_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "replies", force: :cascade do |t|
     t.string   "content"
     t.integer  "board_db_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.string   "t_class"
+    t.string   "t_name"
+    t.string   "s_name"
+    t.integer  "s_score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

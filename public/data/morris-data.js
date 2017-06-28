@@ -3,113 +3,125 @@ $(function() {
     Morris.Area({
         element: 'morris-area-chart',
         data: [{
-            period: '2010 Q1',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
+            period: '2016 1학기 중간',
+            국어: 60,
+            영어: 65,
+            수학: 55
         }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
+            period: '2016 1학기 기말',
+            국어: 70,
+            영어: 66,
+            수학: 45
         }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
+            period: '2016 2학기 중간',
+            국어: 55,
+            영어: 65,
+            수학: 75
         }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
+            period: '2016 2학기 기말',
+            국어: 27,
+            영어: 62,
+            수학: 34
         }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
+            period: '2017 1학기 중간',
+            국어: 98,
+            영어: 77,
+            수학: 31
         }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
+            period: '2017 1학기 기말',
+            국어: 66,
+            영어: 48,
+            수학: 44
         }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
+            period: '2017 2학기 중간',
+            국어: 72,
+            영어: 77,
+            수학: 38
         }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
+            period: '2017 2학기 기말',
+            국어: 76,
+            영어: 79,
+            수학: 55
         }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
+            period: '2018 1학기 중간',
+            국어: 26,
+            영어: 21,
+            수학: 77
         }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
+            period: '2018 1학기 기말',
+            국어: 80,
+            영어: 75,
+            수학: 89
         }],
         xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
-        pointSize: 2,
+        ykeys: ['국어', '영어', '수학'],
+        labels: ['국어', '영어', '수학'],
+        pointSize: 3,
         hideHover: 'auto',
         resize: true
     });
 
-    Morris.Donut({
-        element: 'morris-donut-chart',
-        data: [{
-            label: "Download Sales",
-            value: 12
-        }, {
-            label: "In-Store Sales",
-            value: 30
-        }, {
-            label: "Mail-Order Sales",
-            value: 20
-        }],
-        resize: true
-    });
+    // Morris.Donut({
+    //     element: 'morris-donut-chart',
+    //     data: [{
+    //         label: "Download Sales",
+    //         value: 12
+    //     }, {
+    //         label: "In-Store Sales",
+    //         value: 30
+    //     }, {
+    //         label: "Mail-Order Sales",
+    //         value: 20
+    //     }],
+    //     resize: true
+    // });
 
     Morris.Bar({
         element: 'morris-bar-chart',
         data: [{
-            y: '2006',
-            a: 100,
-            b: 90
+            y: '2016-1학기(중간)',
+            국어: 100,
+            영어: 78,
+            수학: 80
         }, {
-            y: '2007',
-            a: 75,
-            b: 65
+            y: '2016-1학기(기말)',
+            국어: 65,
+            영어: 98,
+            수학: 96
         }, {
-            y: '2008',
-            a: 50,
-            b: 40
+            y: '2016-2학기(중간)',
+            국어: 100,
+            영어: 100,
+            수학: 100
         }, {
-            y: '2009',
-            a: 75,
-            b: 65
+            y: '2016-2학기(기말)',
+            국어: 96,
+            영어: 94,
+            수학: 98
         }, {
-            y: '2010',
-            a: 50,
-            b: 40
+            y: '2017-1학기(중간)',
+            국어: 78,
+            영어: 76,
+            수학: 100
         }, {
-            y: '2011',
-            a: 75,
-            b: 65
+            y: '2017-1학기(기말)',
+            국어: 100,
+            영어: 78,
+            수학: 100
         }, {
-            y: '2012',
-            a: 100,
-            b: 90
+            y: '2017-2학기(중간)',
+            국어: 100,
+            영어: 100,
+            수학: 98
+        }, {
+            y: '2017-2학기(기말)',
+            국어: 100,
+            영어: 100,
+            수학: 100
         }],
         xkey: 'y',
-        ykeys: ['a', 'b'],
-        labels: ['Series A', 'Series B'],
+        ykeys: ['국어', '영어', '수학'],
+        labels: ['국어', '영어', '수학'],
         hideHover: 'auto',
         resize: true
     });
