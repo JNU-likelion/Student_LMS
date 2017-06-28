@@ -34,8 +34,9 @@ class BoardController < ApplicationController
   end
 
   def b_delete #게시글 삭제
-    BoardDb.destroy(params[:post_id])
-    redirect_to '/board/b_index'
+    @board = BoardDb.find(params[:post_id])
+    @board.destroy
+    redirect_to '/'
   end
 
   def b_update

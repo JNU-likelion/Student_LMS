@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   
   get 'home/signup'
   
+  #bootstrap-main
   get 'home/main'
+  get 'home/flot'
+  get 'home/morris'
   
   devise_for :users
   root 'home#index'
