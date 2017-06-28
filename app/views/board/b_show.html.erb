@@ -1,0 +1,21 @@
+<h1>게시글</h1>
+
+<div class= "well">
+    제목: <%= @board.title %>   작성자: <%= @board.writer %><br>
+    내용: <%= @board.content %>
+</div>
+
+
+<form action="/board/<%= @board.id %>/create_reply">
+    <input type="text" name= "reply" placeholder="댓글을 입력해주세요">
+    <input type="submit" value="댓글입력">
+</form>
+
+<h2>댓글</h2>
+
+<% @replies.each do |r| %>
+<%= r.content %><br>
+<% end %>
+
+<a href="/board/b_index">목록</a>
+<h3><a href = "/board/b_delete/<%= @board.id %>" data-confirm="정말로 삭제 하시겠습니까?">  [삭 제]  </a></h3>

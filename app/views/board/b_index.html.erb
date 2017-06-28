@@ -1,0 +1,11 @@
+<h1>게시판</h1>
+
+<a href="/board/b_new">글쓰기</a>
+
+    <% @board.each do |p| %>
+    <div class="well">
+    <!--<img height = "50" width = "50" src = "<= p.photo.url %>" >-->
+    <a href="/board/<%= p.id %>">제목: <%= p.title %> </a><br>
+    
+    </div>
+    <% end %>
