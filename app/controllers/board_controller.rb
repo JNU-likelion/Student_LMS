@@ -18,7 +18,7 @@ class BoardController < ApplicationController
   end
 
   def b_show
-    @board = BoardDb.find(params[:post_id])
+    @board = BoardDb.find(params[:id])
     
     @replies = @board.replies #포스트에 해당하는 댓글들
     
