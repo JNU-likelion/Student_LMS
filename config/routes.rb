@@ -37,10 +37,13 @@ Rails.application.routes.draw do
   
   get 'home/signup'
 
-  get 'login_check' => 'home#login'
-  post '/home/signup_new' => 'signup_new'
+  post '/home/login_check' => 'home#login'
+  post '/home/signup_new' => 'home#signup_new'
   
+  get 'home/mypage'
   
+  get 'home/home'
+  get '/home/logout' => 'home#logout'
   devise_for :users
   root 'home#index'
 

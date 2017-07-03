@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="login_check" method="post" style="padding-top: 120px;">
+    <form action="/home/login_check" method="post" style="padding-top: 120px;">
       <div class="imgcontainer">
         <img src="https://media.rocketpunch.com/cache/8f/32/8f32f7db0e33a395c48850aa7cc7bb16.png" alt="logo" class="logo">
       </div>
@@ -22,7 +22,9 @@
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <a href="/"><button type="submit">Login</button></a>
+        <a href="/"><button type="submit">
+          
+          Login</button></a>
         <!--<--%if(:uname == params[:])%>-->
         <br>
         <input type="checkbox" checked="checked"> Remember me

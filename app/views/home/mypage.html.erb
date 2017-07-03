@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>LMS - 학습 관리 시스템</title>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,9 +19,6 @@
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -235,7 +232,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> 프로필 변경</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="/"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
+                        <li><a href="/home/logout"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -354,69 +351,70 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">성적 확인(전국 / 개인)</h1>
+                    <h1 class="page-header">마이페이지</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            전국 평균 시험 점수
+                            Basic Form Elements
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="morris-area-chart"></div>
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-8">
+                                    <form role="form">
+                                        
+                                        <div class="form-group">
+                                            <label>아이디</label>
+                                            <input class="form-control" value = "<%= @account.acc_id %>">
+                                            <p class="help-block">아이디를 입력하세요.</p>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>이름</label>
+                                            <input class="form-control" value = "<%= @account.acc_name %>">
+                                            <p class="help-block">이름을 입력하세요.</p>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="disabledSelect">비밀번호</label>
+                                            <input class="form-control" id="disabledInput" type="text" placeholder="*********" disabled>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>전화번호</label>
+                                            <input class="form-control" value = "<%= @account.acc_tel %>">
+                                            <p class="help-block">전화번호를 입력하세요.</p>
+                                        </div>
+                                        
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" value = "<%= @account.acc_email %>" placeholder="User-Email">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>주소</label>
+                                            <input class="form-control">
+                                            <p class="help-block">주소를 입력하세요.</p>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-default">입력버튼</button>
+                                        <button type="reset" class="btn btn-default">취소버튼</button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            이오주 학생 시험 점수
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="morris-bar-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <!--<div class="col-lg-6">-->
-                <!--    <div class="panel panel-default">-->
-                        <!--<div class="panel-heading" style="opacity:0;">-->
-                            <!--Line Chart Example-->
-                        <!--</div>-->
-                        <!-- /.panel-heading -->
-                        <!--<div class="panel-body">-->
-                            <!--<div id="morris-line-chart" style="height:0;"></div>-->
-                        <!--</div>-->
-                        <!-- /.panel-body -->
-                <!--    </div>-->
-                    <!-- /.panel -->
-                <!--</div>-->
-                <!-- /.col-lg-6 -->
-                <!--<div class="col-lg-6">-->
-                    <!--<div class="panel panel-default">-->
-                        <!--<div class="panel-heading" style="opacity:0;">-->
-                            <!--Donut Chart Example-->
-                        <!--</div>-->
-                        <!-- /.panel-heading -->
-                        <!--<div class="panel-body">-->
-                            <div id="morris-donut-chart" style="opacity:0;"></div>
-                        <!--</div>-->
-                        <!-- /.panel-body -->
-                    <!--</div>-->
-                    <!-- /.panel -->
-                <!--</div>-->
-                <!-- /.col-lg-6 -->
-                
+                <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
         </div>
@@ -433,11 +431,6 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628175148) do
+ActiveRecord::Schema.define(version: 20170628200326) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "acc_id"
+    t.string   "acc_name"
+    t.string   "acc_pwd"
+    t.string   "acc_tel"
+    t.string   "acc_level"
+    t.string   "acc_grade"
+    t.string   "acc_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "board_dbs", force: :cascade do |t|
     t.string   "title"

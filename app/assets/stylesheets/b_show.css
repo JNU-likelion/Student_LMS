@@ -1,0 +1,31 @@
+/* Full-width input fields */
+
+/* Set a style for all buttons */
+
+
+
+body {
+    align:center;
+}
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.well  {
+    border: 1px black solid ;
+}

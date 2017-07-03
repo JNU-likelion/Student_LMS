@@ -14,10 +14,13 @@ class BoardController < ApplicationController
 
   def b_create          #새글쓰기
     
-    
+    @account = Account.first
     @board = BoardDb.new       
     @board.title = params[:title]  
     @board.content = params[:content]
+    @board.writer = @account.acc_name
+    
+    
     # @board.photo = params[:photo]
     @board.save           
     # redirect_to '/board/b_index'
@@ -49,7 +52,8 @@ class BoardController < ApplicationController
     
     redirect_to :back
     
-    render layout: false
+    render layout:false
+    
   end
 
   def delete #게시글 삭제

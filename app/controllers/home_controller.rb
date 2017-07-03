@@ -22,6 +22,7 @@ class HomeController < ApplicationController
     @login.u_email = params[:u_email]
     @login.save
     
+    redirect_to '/'
 
   end
   
@@ -31,26 +32,48 @@ class HomeController < ApplicationController
     
     
     
-    # render layout: false
+    render layout: false
   end
+
+  def logout
+    
+    Login.find(session[:acc_id]).destroy      
+    session[:acc_id] = nil  
+    redirect_to '/'
+    
+  end
+
 
   def login
     @login = Login.all
+    @account = Account.new
     @login.each do |p|    
         if( params[:uname] == p.u_id && params[:psw] == p.u_pwd ) 
               redirect_to "/home/main"
-              
+              @account.acc_id = p.u_id
+              @account.acc_name = p.u_name
+              @account.acc_level = p.u_job
+              @account.acc_grade = p.u_grade
+              @account.acc_pwd = p.u_pwd
+              @account.acc_tel = p.u_tel
+              @account.acc_email = p.u_email
+              @account.save
+              # if(@account.acc_level == "teacher")
+              #   redirect_to "/home/teacher"
+              # end
         end
     end    
     # render layout: false
   end
   
   def calendar
+    render layout: false
   end
   
   def mainpage
 
   end
+  
   
   def main
     render layout: false
@@ -86,8 +109,10 @@ class HomeController < ApplicationController
   def check
   end
 
-  # def mypage
-  # end
+  def mypage
+    @account = Account.first
+    
+  end
 
   # def score
   # end
@@ -127,6 +152,18 @@ class HomeController < ApplicationController
     @score.s_score = params[:s_score]
     @score.save
     
+  end
+  
+  def home
+    render layout: false
+  end
+  
+  def tables
+    render layout: false
+  end
+  
+  def forms
+    render layout: false
   end
   
 end

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
-
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +32,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body>
@@ -48,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.html">LMS </a>
+                <a class="navbar-brand" href="home">LMS </a>
             </div>
             <!-- /.navbar-header -->
 
@@ -235,7 +234,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> 프로필 변경</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="/"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
+                        <li><a href="/home/logout"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -259,7 +258,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="main.html"><i class="fa fa-dashboard fa-fw"></i> 학습현황</a>
+                            <a href="main"><i class="fa fa-dashboard fa-fw"></i> 학습현황</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 성적확인<span class="fa arrow"></span></a>
@@ -274,9 +273,11 @@
                         <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> 출결현황</a>
                         </li>
+                        
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Q&A</a>
+                            <a href="/board/b_index"><i class="fa fa-edit fa-fw"></i> 게시판</a>
                         </li>
+                        
                         <!--<li>-->
                         <!--    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>-->
                         <!--    <ul class="nav nav-second-level">-->
@@ -349,76 +350,9 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">성적 확인(전국 / 개인)</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            전국 평균 시험 점수
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="morris-area-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            이오주 학생 시험 점수
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div id="morris-bar-chart"></div>
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-6 -->
-                <!--<div class="col-lg-6">-->
-                <!--    <div class="panel panel-default">-->
-                        <!--<div class="panel-heading" style="opacity:0;">-->
-                            <!--Line Chart Example-->
-                        <!--</div>-->
-                        <!-- /.panel-heading -->
-                        <!--<div class="panel-body">-->
-                            <!--<div id="morris-line-chart" style="height:0;"></div>-->
-                        <!--</div>-->
-                        <!-- /.panel-body -->
-                <!--    </div>-->
-                    <!-- /.panel -->
-                <!--</div>-->
-                <!-- /.col-lg-6 -->
-                <!--<div class="col-lg-6">-->
-                    <!--<div class="panel panel-default">-->
-                        <!--<div class="panel-heading" style="opacity:0;">-->
-                            <!--Donut Chart Example-->
-                        <!--</div>-->
-                        <!-- /.panel-heading -->
-                        <!--<div class="panel-body">-->
-                            <div id="morris-donut-chart" style="opacity:0;"></div>
-                        <!--</div>-->
-                        <!-- /.panel-body -->
-                    <!--</div>-->
-                    <!-- /.panel -->
-                <!--</div>-->
-                <!-- /.col-lg-6 -->
-                
-            </div>
-            <!-- /.row -->
+        
+        <div id="page-wrapper" class="row">
+            <div class="align-self-center col" style = "padding: 220px; text-align: center; font-size:50px;">LMS <div style="font-size:40px; "><br>학습 관리 시스템에 오신것을<br> 환영합니다.</div></div>
         </div>
         <!-- /#page-wrapper -->
 

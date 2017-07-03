@@ -1,35 +1,400 @@
 <html>
     <head>
-        <style>
-            .well{}
-            form > input {
-                
-            }
-        </style>
-    </head>
-    <body>
-        <h1>게시글</h1>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/stylesheets/b_show.css">
+        <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/stylesheets/board.scss">
+    <title>LMS - 학습 관리 시스템</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        ul > li {
+            padding:15px;
+            font-size:20px;
+            list-style :none;
+        }
         
-        <div class= "well">
-            제목: <%= @board.title %>   작성자: <%= @board.writer %><br>
-            내용: <%= @board.content %> 글 id : <%= @board.id %>
+    </style>
+
+    
+    </head>
+    
+    <body>
+            <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home">LMS </a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>허승범 강사</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>24 분 전</em>
+                                    </span>
+                                </div>
+                                <div>왜 학원에 안왔니?</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>허승범 강사</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>1 일 전</em>
+                                    </span>
+                                </div>
+                                <div>이오주 학생 성적은 전체 평균보다 상위입니다. 그러나 기복이 심한 것 같으니 학업..</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>허승범 강사</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>2일전</em>
+                                    </span>
+                                </div>
+                                <div>이오주 학생의 모의고사 결과....</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>국어 과제 진행률</strong>
+                                        <span class="pull-right text-muted">40% 완료</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>수학 문제 풀기</strong>
+                                        <span class="pull-right text-muted">20% 완료</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>과학 보고서 작성</strong>
+                                        <span class="pull-right text-muted">60% 완료</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>지난 과제 제출</strong>
+                                        <span class="pull-right text-muted">80% 완료</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>모든 과제 보기</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> 새로운 메세지
+                                    <span class="pull-right text-muted small">12 분 전</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> 새로운 쪽지
+                                    <span class="pull-right text-muted small">14 분 전</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> 새로운 과제
+                                    <span class="pull-right text-muted small">4 분 전</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>모든 로그 보기</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 마이페이지</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 프로필 변경</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/home/logout"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="/home/main"><i class="fa fa-dashboard fa-fw"></i> 학습현황</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 성적확인<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                
+                                <li>
+                                    <a href="morris.html">전국 & 개인별 성적 확인</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 출결현황</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/board/b_index"><i class="fa fa-edit fa-fw"></i> 게시판</a>
+                        </li>
+                        
+                        <!--<li>-->
+                        <!--    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>-->
+                        <!--    <ul class="nav nav-second-level">-->
+                        <!--        <li>-->
+                        <!--            <a href="panels-wells.html">Panels and Wells</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="buttons.html">Buttons</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="notifications.html">Notifications</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="typography.html">Typography</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="icons.html"> Icons</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="grid.html">Grid</a>-->
+                        <!--        </li>-->
+                        <!--    </ul>-->
+                            <!-- /.nav-second-level -->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>-->
+                        <!--    <ul class="nav nav-second-level">-->
+                        <!--        <li>-->
+                        <!--            <a href="#">Second Level Item</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="#">Second Level Item</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="#">Third Level <span class="fa arrow"></span></a>-->
+                        <!--            <ul class="nav nav-third-level">-->
+                        <!--                <li>-->
+                        <!--                    <a href="#">Third Level Item</a>-->
+                        <!--                </li>-->
+                        <!--                <li>-->
+                        <!--                    <a href="#">Third Level Item</a>-->
+                        <!--                </li>-->
+                        <!--                <li>-->
+                        <!--                    <a href="#">Third Level Item</a>-->
+                        <!--                </li>-->
+                        <!--                <li>-->
+                        <!--                    <a href="#">Third Level Item</a>-->
+                        <!--                </li>-->
+                        <!--            </ul>-->
+                                    <!-- /.nav-third-level -->
+                        <!--        </li>-->
+                        <!--    </ul>-->
+                            <!-- /.nav-second-level -->
+                        <!--</li>-->
+                        <!--<li>-->
+                        <!--    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>-->
+                        <!--    <ul class="nav nav-second-level">-->
+                        <!--        <li>-->
+                        <!--            <a href="blank.html">Blank Page</a>-->
+                        <!--        </li>-->
+                        <!--        <li>-->
+                        <!--            <a href="login.html">Login Page</a>-->
+                        <!--        </li>-->
+                        <!--    </ul>-->
+                            <!-- /.nav-second-level -->
+                        <!--</li>-->
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <h1 style="padding:20px">게시글</h1>
+        
+            <div class= "well">
+            <ul class = "show_ul">
+                <li class = "show_list">
+                    제목  : <%= @board.title %><br>
+                </li>
+                <li class = "show_list">
+                    작성자  : <%= @board.writer %><br>
+                </li>
+                <li class = "show_list">
+                    글 id  : <%= @board.id %><br>
+                </li>
+                <li class = "show_list">
+                    내용 
+                </li>
+            </ul>
+            <div class = "content-box" style = "margin:0 auto; width:1000px; height:600px; border: solid 1px gray;">
+                            <%= @board.content %>
+            </div>
+            
+        <div style="margin-top:50px;">
+            <form action="/board/<%= @board.id %>/create_reply">
+                <input type="text" name= "reply" placeholder="댓글을 입력해주세요">
+                <button type="submit" value="댓글입력" class="reply"> 댓글입력 </button>
+            </form>
         </div>
         
-        
-        <form action="/board/<%= @board.id %>/create_reply">
-            <input type="text" name= "reply" placeholder="댓글을 입력해주세요">
-            <input type="submit" value="댓글입력">
-        </form>
-        
-        <h2>댓글</h2>
-        
+        <p>댓글</p>
+        <form>
         <% @replies.each do |r| %>
         <%= r.content %><br>
         <% end %>
-        
-        <a href="/board/b_index">목록</a>
-        <h3><a href = "/board/delete/<%= @board.id %>" data-confirm="정말로 삭제 하시겠습니까?">  [삭 제]  </a></h3>
-        <h3><a href ="/board/b_update/<%= @board.id %>" data-confirm="수정하시겠습니까?">[수정]</a></h3>  
+        </form>
+        <a href="/board/b_index"><button type="submit" value="목록" style="width:80px; padding:8px;">목록</button></a>
+        <a href ="/board/b_update/<%= @board.id %>" data-confirm="수정하시겠습니까?"><button type="submit" value="수정" style="width:80px; padding:8px;">수정</button></a>
+        <a href = "/board/delete/<%= @board.id %>" data-confirm="정말로 삭제 하시겠습니까?"><button type="submit" value="삭제" style="width:80px; padding:8px;">삭제</button></a>
+
     </body>
 </html>
-
