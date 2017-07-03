@@ -1,3 +1,13 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel='stylesheet' type='text/css' href='http://arshaw.com/css/main.css?6' />
+<link rel='stylesheet' type='text/css' href='http://arshaw.com/css/fullcalendar.css?3' />
+
+<link rel='stylesheet' type='text/css' href='http://arshaw.com/js/fullcalendar-1.6.3/fullcalendar/fullcalendar.css' />
+<script type='text/javascript' src='http://arshaw.com/js/fullcalendar-1.6.3/jquery/jquery-1.10.2.min.js'></script>
+<script type='text/javascript' src='http://arshaw.com/js/fullcalendar-1.6.3/jquery/jquery-ui-1.10.3.custom.min.js'></script>
+<script type='text/javascript' src='http://arshaw.com/js/fullcalendar-1.6.3/fullcalendar/fullcalendar.min.js'></script>
 <script type='text/javascript'>
 	$(document).ready(function() {
 
@@ -16,7 +26,7 @@
 			events : [ {
 				title : 'All Day Event',
 				start : new Date(y, m, 1)
-			}, {
+			}, {		
 				title : 'Long Event',
 				start : new Date(y, m, d - 5),
 				end : new Date(y, m, d - 2)
@@ -54,3 +64,8 @@
 
 	});
 </script>
+</head>
+<body style="background-color:white;">
+	<div id='calendar' style='margin: 3em 0; font-size: 13px'></div>
+</body>
+</html>
